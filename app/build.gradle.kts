@@ -22,7 +22,7 @@ android {
 
     defaultConfig {
         applicationId = "com.android.virginmoney"
-        minSdk = 24
+        minSdk = 21
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
@@ -31,10 +31,10 @@ android {
     }
     buildTypes {
         getByName("debug") {
-            buildConfigField("String", "BASE_URL", "\"\"")
+            buildConfigField("String", "BASE_URL", "\"https://61e947967bc0550017bc61bf.mockapi.io/\"")
         }
         getByName("release") {
-            buildConfigField("String", "BASE_URL", "\"\"")
+            buildConfigField("String", "BASE_URL", "\"https://61e947967bc0550017bc61bf.mockapi.io/\"")
             isMinifyEnabled = false
         }
     }

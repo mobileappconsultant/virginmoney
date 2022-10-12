@@ -1,11 +1,6 @@
-package com.android.virginmoney.data.cache.entity
+package com.android.virginmoney.domain.model
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-
-@Entity(tableName = "users")
-data class UserEntity(
-    @PrimaryKey
+data class User(
     val id: String,
     val avatar: String,
     val createdAt: String,

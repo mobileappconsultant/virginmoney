@@ -20,6 +20,10 @@ class UsersViewModel @Inject constructor(
     private val _uiState = MutableStateFlow(UsersUiState())
     val uiState = _uiState.asStateFlow()
 
+    init {
+        getUsers()
+    }
+
     fun getUsers() = viewModelScope.launch(dispatcherProvider.io) {
         _uiState.update {
             it.copy(isLoading = true)
@@ -29,7 +33,7 @@ class UsersViewModel @Inject constructor(
         _uiState.update {
             it.copy(
                 isLoading = false,
-                rooms = usersData.data.orEmpty(),
+                users = usersData.data.orEmpty(),
                 showErrorScreen = showErrorScreen
             )
         }
@@ -38,6 +42,7 @@ class UsersViewModel @Inject constructor(
 
 data class UsersUiState(
     val isLoading: Boolean = false,
-    val rooms: List<User> = emptyList(),
-    val showErrorScreen: Boolean = false
+    val users: List<User> = emptyList(),
+    val showErrorScreen: Boolean = false,
+    val message: String = ""
 )

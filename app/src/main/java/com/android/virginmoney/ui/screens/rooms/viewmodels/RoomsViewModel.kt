@@ -20,17 +20,26 @@ class RoomsViewModel @Inject constructor(
     private val _uiState = MutableStateFlow(RoomUiState())
     val uiState = _uiState.asStateFlow()
 
+    init {
+        getRooms()
+    }
+
     fun getRooms() = viewModelScope.launch(dispatcherProvider.io) {
         _uiState.update {
             it.copy(isLoading = true)
         }
         val roomsData = getRoomsUseCase.execute()
         val showErrorScreen = roomsData.errorMessage != null && roomsData.data.isNullOrEmpty()
+        val (occupied, empty) = roomsData.data?.let {
+            it.partition { it.isOccupied }
+        } ?: Pair(emptyList(), emptyList())
         _uiState.update {
             it.copy(
                 isLoading = false,
                 rooms = roomsData.data.orEmpty(),
-                showErrorScreen = showErrorScreen
+                showErrorScreen = showErrorScreen,
+                emptyRoomCount = empty.size,
+                occupiedRoomCount = occupied.size
             )
         }
     }
@@ -39,5 +48,8 @@ class RoomsViewModel @Inject constructor(
 data class RoomUiState(
     val isLoading: Boolean = false,
     val rooms: List<Room> = emptyList(),
-    val showErrorScreen: Boolean = false
+    val showErrorScreen: Boolean = false,
+    val message: String = "",
+    val emptyRoomCount: Int = 0,
+    val occupiedRoomCount: Int = 0
 )

@@ -71,7 +71,6 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-process:2.4.1")
     implementation("androidx.paging:paging-common-ktx:3.1.1")
     androidTestImplementation(Compose.composeUiTest)
-    implementation(Compose.navigation)
 
     implementation(Timber.library)
     implementation(Navigation.navigation)
@@ -100,7 +99,6 @@ dependencies {
     implementation(Hilt.hiltAndroid)
     kapt(Hilt.hiltAndroidCompiler)
     kapt(Hilt.hiltCompiler)
-    implementation(Hilt.hiltNavigation)
 
     // Retrofit
     implementation(Retrofit.retrofit)

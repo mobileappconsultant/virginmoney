@@ -11,7 +11,7 @@ import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import coil.annotation.ExperimentalCoilApi
 import com.android.virginmoney.ui.theme.VirginMoneyTheme
-import com.android.virginmoney.ui.navigation.MainNavigation
+import com.android.virginmoney.ui.screens.MainScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -35,7 +35,7 @@ fun VirginMoneyApp() {
                 .fillMaxSize(),
             color = MaterialTheme.colors.background
         ) {
-            MainNavigation()
+            MainScreen()
         }
     }
 }

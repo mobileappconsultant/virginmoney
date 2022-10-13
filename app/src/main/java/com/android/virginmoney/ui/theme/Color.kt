@@ -13,6 +13,7 @@ val LightGrey = Color(0xFFD5D5D5)
 val ExtraLightBlue = Color(0xFFF8F9FF)
 val LightBlue = Color(0xFFD9DEFF)
 val Blue = Color(0xFF3F58FF)
+val PrimaryColor = Color(0xFFC40202)
 
 @Composable
 fun getColor(light: Color, dark: Color): Color {

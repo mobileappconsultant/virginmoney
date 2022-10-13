@@ -1,6 +1,7 @@
 package com.android.virginmoney.ui.screens.users
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -19,20 +20,25 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberAsyncImagePainter
+import com.android.virginmoney.R
 import com.android.virginmoney.domain.model.User
 import com.android.virginmoney.ui.theme.primaryTextColor
 import com.android.virginmoney.ui.theme.secondaryTextColor
 
 @ExperimentalCoilApi
 @Composable
-fun UserListItem(user: User) {
+fun UserListItem(user: User, onItemClick: (User) -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
+            .clickable {
+                onItemClick(user)
+            }
             .wrapContentHeight(),
         elevation = 4.dp,
     ) {
@@ -41,7 +47,7 @@ fun UserListItem(user: User) {
                 modifier = Modifier
                     .size(64.dp)
                     .clip(RoundedCornerShape(8.dp)),
-                painter = rememberAsyncImagePainter(user.avatar), contentDescription = "Avatar Image"
+                painter = rememberAsyncImagePainter(user.avatar, error = painterResource(id = R.drawable.avatar_default)), contentDescription = "Avatar Image"
             )
             Spacer(modifier = Modifier.width(8.dp))
             Column(

@@ -12,10 +12,10 @@ import com.android.virginmoney.domain.model.User
 
 @ExperimentalCoilApi
 @Composable
-fun UsersList(users: List<User>) {
+fun UsersList(users: List<User>, onItemClick: (User) -> Unit) {
     LazyColumn {
         items(users) { user ->
-            UserListItem(user = user)
+            UserListItem(user = user, onItemClick)
             Spacer(modifier = Modifier.height(8.dp))
         }
     }

@@ -3,13 +3,14 @@ package com.android.virginmoney.domain.mapper
 import com.android.virginmoney.data.cache.entity.UserEntity
 import com.android.virginmoney.data.model.people.UsersDtoItem
 import com.android.virginmoney.domain.model.User
+import com.android.virginmoney.utils.Constants
 import javax.inject.Inject
 
 class UserMapper @Inject constructor() : Mapper<UserEntity, UsersDtoItem, User> {
     override fun toEntity(value: UsersDtoItem): UserEntity = UserEntity(
         id = value.id,
         avatar = value.avatar,
-        createdAt = value.createdAt.toString(),
+        createdAt = value.createdAt.toString(Constants.DATE_FORMAT),
         email = value.email,
         favouriteColor = value.favouriteColor,
         firstName = value.firstName,

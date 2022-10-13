@@ -11,12 +11,19 @@ import com.android.virginmoney.ui.screens.users.viewmodels.UsersUiState
 
 @ExperimentalCoilApi
 @Composable
-fun UsersScreen(uiState: UsersUiState, onItemClick: (User) -> Unit) {
+fun UsersScreen(uiState: UsersUiState, onRetry: () -> Unit, onItemClick: (User) -> Unit,) {
 
     when {
-        uiState.isLoading -> FullScreenProgress(modifier = Modifier.fillMaxSize())
-        uiState.users.isEmpty() -> ErrorPage(message = uiState.message) {
+        uiState.isLoading -> {
+            FullScreenProgress(modifier = Modifier.fillMaxSize())
         }
-        else -> UsersList(uiState.users, onItemClick)
+        uiState.users.isEmpty() -> {
+            ErrorPage(message = uiState.message) {
+                onRetry.invoke()
+            }
+        }
+        else -> {
+            UsersList(uiState.users, onItemClick)
+        }
     }
 }

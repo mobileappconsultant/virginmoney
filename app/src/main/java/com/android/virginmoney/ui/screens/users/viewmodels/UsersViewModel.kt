@@ -34,7 +34,8 @@ class UsersViewModel @Inject constructor(
             it.copy(
                 isLoading = false,
                 users = usersData.data.orEmpty(),
-                showErrorScreen = showErrorScreen
+                showErrorScreen = showErrorScreen,
+                message = usersData.errorMessage.orEmpty()
             )
         }
     }

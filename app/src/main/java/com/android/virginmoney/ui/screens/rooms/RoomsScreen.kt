@@ -10,7 +10,7 @@ import com.android.virginmoney.ui.screens.rooms.viewmodels.RoomUiState
 
 @ExperimentalCoilApi
 @Composable
-fun RoomsScreen(roomUiState: RoomUiState) {
+fun RoomsScreen(roomUiState: RoomUiState, onRetry: () -> Unit) {
     when {
         roomUiState.isLoading -> FullScreenProgress(modifier = Modifier.fillMaxSize())
         roomUiState.rooms.isEmpty() -> ErrorPage(message = roomUiState.message) {

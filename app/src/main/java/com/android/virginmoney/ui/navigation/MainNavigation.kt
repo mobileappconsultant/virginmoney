@@ -30,7 +30,12 @@ fun MainNavigation(navController: NavHostController) {
         composable(route = Routes.UsersScreen.route) {
             val usersViewModel = hiltViewModel<UsersViewModel>()
             val uiState by usersViewModel.uiState.collectAsState()
-            UsersScreen(uiState = uiState) {
+            UsersScreen(
+                uiState = uiState,
+                {
+                    usersViewModel.getUsers()
+                }
+            ) {
                 navController.navigate(
                     Routes.UserDetailsScreen.createRoute(gson.toJson(it))
                 )
@@ -40,7 +45,9 @@ fun MainNavigation(navController: NavHostController) {
         composable(route = Routes.RoomsScreen.route) {
             val roomsViewModel = hiltViewModel<RoomsViewModel>()
             val uiState by roomsViewModel.uiState.collectAsState()
-            RoomsScreen(roomUiState = uiState)
+            RoomsScreen(roomUiState = uiState) {
+                roomsViewModel.getRooms()
+            }
         }
 
         composable(

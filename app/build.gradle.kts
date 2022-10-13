@@ -9,6 +9,7 @@ plugins {
 
 android {
     compileSdk = 33
+    apply(from = "$rootDir/android-library.kts")
 
     lint {
         abortOnError = false
@@ -53,11 +54,14 @@ android {
         jvmTarget = "1.8"
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Compose.composeVersion
+        kotlinCompilerExtensionVersion = "1.3.0"
     }
 }
 
 dependencies {
+    implementation(project(":people"))
+    implementation(project(":rooms"))
+
     implementation(Kotlin.core)
     implementation(Compose.ui)
     implementation(Compose.hilt)
@@ -70,6 +74,7 @@ dependencies {
     implementation(Compose.accompanistPermission)
     implementation("androidx.lifecycle:lifecycle-process:2.4.1")
     implementation("androidx.paging:paging-common-ktx:3.1.1")
+    implementation(project(mapOf("path" to ":core")))
     androidTestImplementation(Compose.composeUiTest)
 
     implementation(Timber.library)
@@ -101,20 +106,11 @@ dependencies {
     kapt(Hilt.hiltCompiler)
 
     // Retrofit
-    implementation(Retrofit.retrofit)
-    implementation(Retrofit.okhttp)
-    implementation(Retrofit.gson)
-    implementation(Retrofit.logging)
-
+    implementation("com.google.code.gson:gson:2.9.1")
     implementation(Compose.coil)
     implementation(Compose.paging)
     implementation(Compose.swipeRefresh)
 
-    implementation(Room.room)
-    implementation(Room.roomKtx)
-    implementation(Room.roomPaging)
-    kapt(Room.roomKapt)
-    implementation(Browser.browser)
     implementation(Joda.joda)
 }
 

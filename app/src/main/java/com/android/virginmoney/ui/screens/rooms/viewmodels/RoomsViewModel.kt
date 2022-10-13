@@ -2,9 +2,9 @@ package com.android.virginmoney.ui.screens.rooms.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.android.virginmoney.domain.model.Room
-import com.android.virginmoney.domain.usecase.GetRoomsUseCase
-import com.android.virginmoney.utils.DispatcherProvider
+import com.android.core.utils.DispatcherProvider
+import com.android.rooms.domain.model.Room
+import com.android.rooms.domain.usecase.GetRoomsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow

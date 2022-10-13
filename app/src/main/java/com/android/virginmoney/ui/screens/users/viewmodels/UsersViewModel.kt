@@ -2,9 +2,9 @@ package com.android.virginmoney.ui.screens.users.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.android.virginmoney.domain.model.User
-import com.android.virginmoney.domain.usecase.GetUsersUseCase
-import com.android.virginmoney.utils.DispatcherProvider
+import com.android.core.utils.DispatcherProvider
+import com.android.people.domain.model.User
+import com.android.people.domain.usecase.GetUsersUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow

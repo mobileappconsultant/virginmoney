@@ -1,11 +1,11 @@
 package com.android.virginmoney.ui.viewmodel
 
-import com.android.virginmoney.TestDispatcherProvider
-import com.android.virginmoney.domain.usecase.GetUsersUseCase
+import com.android.people.domain.usecase.GetUsersUseCase
 import com.android.virginmoney.ui.screens.users.viewmodels.UsersUiState
 import com.android.virginmoney.ui.screens.users.viewmodels.UsersViewModel
 import com.android.virginmoney.utils.CoroutineTestRule
 import com.android.virginmoney.utils.MockUtils
+import com.android.virginmoney.utils.TestDispatcherProvider
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.coVerify
@@ -44,7 +44,10 @@ class UsersViewModelTest {
 
     @Test
     fun `when get rooms is called, verify that the required data state is emitted`() = runTest {
-        coEvery { mockedGetUsersUseCase.execute() } returns GetUsersUseCase.Data(null, listOf(MockUtils.createMockUser("1")))
+        coEvery { mockedGetUsersUseCase.execute() } returns GetUsersUseCase.Data(
+            null,
+            listOf(MockUtils.createMockUser("1"))
+        )
 
         /* List to collect the results */
         val usersUiStates = mutableListOf<UsersUiState>()

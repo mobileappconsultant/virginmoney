@@ -1,5 +1,5 @@
 object Compose {
-    const val composeVersion = "1.1.0"
+    const val composeVersion = "1.2.1"
     private const val accompanistVersion = "0.23.0"
 
     const val hilt = "androidx.hilt:hilt-navigation-compose:1.0.0"

@@ -8,3 +8,7 @@ pluginManagement {
 
 rootProject.name = "Virgin Money"
 include(":app")
+include(":core")
+include(":people")
+include(":rooms")
+

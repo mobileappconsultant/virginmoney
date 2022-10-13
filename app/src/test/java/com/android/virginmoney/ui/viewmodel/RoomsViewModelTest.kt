@@ -1,11 +1,11 @@
 package com.android.virginmoney.ui.viewmodel
 
-import com.android.virginmoney.TestDispatcherProvider
-import com.android.virginmoney.domain.usecase.GetRoomsUseCase
+import com.android.rooms.domain.usecase.GetRoomsUseCase
 import com.android.virginmoney.ui.screens.rooms.viewmodels.RoomUiState
 import com.android.virginmoney.ui.screens.rooms.viewmodels.RoomsViewModel
 import com.android.virginmoney.utils.CoroutineTestRule
 import com.android.virginmoney.utils.MockUtils
+import com.android.virginmoney.utils.TestDispatcherProvider
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.coVerify

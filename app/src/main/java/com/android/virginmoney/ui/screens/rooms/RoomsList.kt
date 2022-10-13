@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
-import com.android.virginmoney.domain.model.Room
+import com.android.rooms.domain.model.Room
 
 @ExperimentalCoilApi
 @Composable

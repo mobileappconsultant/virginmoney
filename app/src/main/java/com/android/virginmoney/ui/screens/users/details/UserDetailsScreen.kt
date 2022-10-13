@@ -20,8 +20,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberAsyncImagePainter
+import com.android.people.domain.model.User
 import com.android.virginmoney.R
-import com.android.virginmoney.domain.model.User
 import com.android.virginmoney.ui.theme.primaryTextColor
 import com.android.virginmoney.ui.theme.secondaryTextColor
 

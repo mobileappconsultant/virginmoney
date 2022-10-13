@@ -1,11 +1,11 @@
 package com.android.virginmoney.utils
 
-import com.android.virginmoney.data.cache.entity.RoomEntity
-import com.android.virginmoney.data.cache.entity.UserEntity
-import com.android.virginmoney.data.model.people.UsersDtoItem
-import com.android.virginmoney.data.model.rooms.RoomsDtoItem
-import com.android.virginmoney.domain.model.Room
-import com.android.virginmoney.domain.model.User
+import com.android.people.data.local.entity.UserEntity
+import com.android.people.data.remote.model.UsersDtoItem
+import com.android.people.domain.model.User
+import com.android.rooms.data.local.entity.RoomEntity
+import com.android.rooms.data.remote.model.RoomsDtoItem
+import com.android.rooms.domain.model.Room
 import org.joda.time.DateTime
 
 object MockUtils {

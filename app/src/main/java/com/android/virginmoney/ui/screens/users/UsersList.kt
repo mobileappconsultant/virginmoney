@@ -9,9 +9,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
-import com.android.virginmoney.domain.model.User
+import com.android.people.domain.model.User
 
 const val LIST_TEST_TAG = "LIST_TEST_TAG"
+
 @ExperimentalCoilApi
 @Composable
 fun UsersList(users: List<User>, onItemClick: (User) -> Unit) {

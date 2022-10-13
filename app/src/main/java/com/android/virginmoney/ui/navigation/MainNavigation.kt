@@ -12,7 +12,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import coil.annotation.ExperimentalCoilApi
-import com.android.virginmoney.domain.model.User
+import com.android.people.domain.model.User
 import com.android.virginmoney.ui.screens.rooms.RoomsScreen
 import com.android.virginmoney.ui.screens.rooms.viewmodels.RoomsViewModel
 import com.android.virginmoney.ui.screens.users.UsersScreen

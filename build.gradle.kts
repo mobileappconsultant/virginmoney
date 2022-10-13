@@ -1,5 +1,7 @@
 plugins {
     id("io.gitlab.arturbosch.detekt") version "1.16.0"
+    id("com.android.library") version "7.1.2" apply false
+    id("org.jetbrains.kotlin.android") version "1.7.10" apply false
 }
 
 buildscript {

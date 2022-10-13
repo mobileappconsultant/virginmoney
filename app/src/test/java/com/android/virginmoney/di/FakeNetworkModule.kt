@@ -1,6 +1,7 @@
 package com.android.virginmoney.di
 
-import com.android.virginmoney.TestDispatcherProvider
+import com.android.core.di.NetworkModule
+import com.android.virginmoney.utils.TestDispatcherProvider
 import dagger.Module
 import dagger.hilt.components.SingletonComponent
 import dagger.hilt.testing.TestInstallIn

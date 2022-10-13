@@ -16,8 +16,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
+import com.android.rooms.domain.model.Room
 import com.android.virginmoney.R
-import com.android.virginmoney.domain.model.Room
 import com.android.virginmoney.ui.theme.primaryTextColor
 import com.android.virginmoney.ui.theme.secondaryTextColor
 

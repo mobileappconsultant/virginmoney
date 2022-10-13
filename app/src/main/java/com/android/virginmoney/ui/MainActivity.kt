@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import coil.annotation.ExperimentalCoilApi
 import com.android.virginmoney.ui.theme.VirginMoneyTheme
@@ -25,7 +24,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@OptIn(ExperimentalCoilApi::class, ExperimentalComposeUiApi::class)
 @Composable
 fun VirginMoneyApp() {
     VirginMoneyTheme {

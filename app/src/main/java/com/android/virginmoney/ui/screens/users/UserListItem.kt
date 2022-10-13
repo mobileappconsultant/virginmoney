@@ -34,11 +34,9 @@ fun UserListItem(user: User) {
         modifier = Modifier
             .fillMaxWidth()
             .wrapContentHeight(),
-        elevation = 8.dp,
-        shape = RoundedCornerShape(12.dp)
+        elevation = 4.dp,
     ) {
-        Row(horizontalArrangement = Arrangement.Start, verticalAlignment = Alignment.CenterVertically) {
-            Spacer(modifier = Modifier.width(8.dp))
+        Row(modifier = Modifier.padding(horizontal = 16.dp), horizontalArrangement = Arrangement.Start, verticalAlignment = Alignment.CenterVertically) {
             Image(
                 modifier = Modifier
                     .size(64.dp)
